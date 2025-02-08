@@ -1,17 +1,30 @@
-from subfunctions.rgb_sieve import rgb_sieve
-from consts import height, width
+from subfunctions.function_near import function_near
+from subfunctions.determinate_coordinates import determine_coordinates
+from subfunctions.load_image import load_image
+import consts
 
-print(width)
 
-def function_photo(image):
-    
-    
-    for y in range(height):
-        for x in range(width):
-            pixel = image.getpixel((x, y))
-            new_color = (0,0,255)    
-                
-            if rgb_sieve(pixel):
-                image.putpixel((x, y), new_color)
-    
-    image.show()
+def function_photo(path):
+    image, draw = load_image(path)
+
+    consts.width = image.width
+    consts.height = image.height
+
+    from subfunctions.right_left_pixel import right_left_pixel
+    consts.radius, consts.centrel_pixel = right_left_pixel(image)
+
+    ls = function_near(image, draw)
+
+    for element in ls:
+        draw.rectangle((element[0], element[1], element[2], element[3]), fill='blue')
+        draw.text((element[0], element[1]), f"{determine_coordinates(element, image)}", fill='black')
+
+    image.save('example.png')
+
+
+        
+
+
+
+
+   

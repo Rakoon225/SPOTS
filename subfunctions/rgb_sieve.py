@@ -1,10 +1,9 @@
-
-
 def rgb_sieve(pixel):
-    threshold = 10  # Можно регулировать в зависимости от желаемой чувствительности
+    threshold = 70
+    # Вычисляем среднюю яркость пикселя
+    average_brightness = (pixel[0] + pixel[1] + pixel[2]) / 3
+    
+    # Возвращаем True, если средняя яркость меньше порога, иначе False
+    return average_brightness < threshold
 
-    # Проверяем, что все компоненты цвета (R, G, B) больше порога
-    if all(color_component > threshold for color_component in pixel):
-        return True
-    else:
-        return False
+
