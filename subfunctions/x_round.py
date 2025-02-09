@@ -1,20 +1,21 @@
 
 
-def x_round(image, x_spot):
+def x_round(image, spot):
     from consts import height, width
-    max_element = -1
+    max_element = [-1, 0]
 
     for y in range(height):
         for x in range(width):
             pixel = image.getpixel((x, y))
                  
-            if all(value > 100 for value in pixel):             
-                if x == x_spot and x > max_element:
-                    max_element = x
+            if all(value > 5 for value in pixel):
+           
+                if y == spot[1]:
+                    if x > max_element[0]:
+                        max_element = [x,y]
                     
 
 
-
-
-    return max_element
+    # image.putpixel((max_element[0],max_element[1]), (0,255,0))  
+    return max_element[0]
 
