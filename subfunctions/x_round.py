@@ -1,18 +1,16 @@
-
+from subfunctions.find_round import find_round
 
 def x_round(image, spot):
-    from consts import height, width
+    import consts
     max_element = [-1, 0]
 
-    for y in range(height):
-        for x in range(width):
-            pixel = image.getpixel((x, y))
-                 
-            if all(value > 5 for value in pixel):
-           
-                if y == spot[1]:
-                    if x > max_element[0]:
-                        max_element = [x,y]
+    if len(consts.round_ls) == 0:
+        find_round(image) 
+    
+    for el in consts.round_ls:       
+        if el[1] == spot[1]:
+            if el[0] > max_element[0]:
+                max_element = [el[0], el[1]]
                     
 
 

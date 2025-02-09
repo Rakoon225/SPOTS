@@ -1,8 +1,10 @@
-
 from subfunctions.find_spots import find_spots
 
 dx = 5
+from subfunctions.time_decorator import time_decorator
 
+
+@time_decorator
 def function_near(image, draw):
 
     ls = find_spots(image, draw)

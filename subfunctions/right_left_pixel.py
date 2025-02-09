@@ -1,6 +1,9 @@
 from consts import height, width
 from subfunctions.rgb_sieve import rgb_sieve
+from subfunctions.time_decorator import time_decorator
 
+
+@time_decorator
 def right_left_pixel(image):
 
     right_pixel = [-1, 0]
@@ -25,6 +28,7 @@ def right_left_pixel(image):
     radius = (width - (width - right_pixel[0]) - left_pixel[0]) // 2
     radius_y = (height - (height - bottom_pixel[1]) - top_pixel[1]) // 2
     centrel_pixel = [left_pixel[0] + radius, top_pixel[1] + radius_y]
+
 
     return radius, centrel_pixel
 

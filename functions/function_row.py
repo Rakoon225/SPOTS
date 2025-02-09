@@ -1,8 +1,11 @@
-import pprint
+from pprint import pprint
 from functions.function_photo import function_photo
 from subfunctions.speed_operation import speed_operation
 
+from subfunctions.time_decorator import time_decorator
 
+
+@time_decorator
 def function_row(ls):
 
     data = {}
@@ -10,4 +13,5 @@ def function_row(ls):
     for path in ls:
         data[f'{path}'] = function_photo(path)
 
-    print(speed_operation(data))
+    pprint(data)
+    pprint(speed_operation(data))

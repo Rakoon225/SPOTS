@@ -2,9 +2,13 @@
 from subfunctions.rgb_sieve import rgb_sieve
 import math
 
-ls = []
 
+from subfunctions.time_decorator import time_decorator
+
+
+@time_decorator
 def find_spots(image, draw):
+    ls = []
     from consts import height, width, centrel_pixel, radius, size
     for y in range(height):
         for x in range(width):
@@ -16,5 +20,7 @@ def find_spots(image, draw):
                     # draw.rectangle((x, y, x+10, y+10), fill='blue')
 
                     ls.append([x,y, x+size, y+size])
+
+
 
     return ls
