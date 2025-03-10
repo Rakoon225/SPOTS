@@ -15,5 +15,6 @@ def x_round(image, spot):
 
 
     # image.putpixel((max_element[0],max_element[1]), (0,255,0))  
+    image.putpixel((max_element[0],max_element[1]), (255,0,255))   
     return max_element[0]
 

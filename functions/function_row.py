@@ -11,7 +11,9 @@ def function_row(ls):
     data = {}
 
     for path in ls:
-        data[f'{path}'] = function_photo(path)
+        data[f'{path}'], _ = function_photo(path)
 
-    pprint(data)
-    pprint(speed_operation(data))
+    # pprint(data)
+    # pprint(speed_operation(data))
+    
+    return speed_operation(data)

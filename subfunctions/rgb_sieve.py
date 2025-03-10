@@ -7,4 +7,11 @@ def rgb_sieve(pixel):
     # Возвращаем True, если средняя яркость меньше порога, иначе False
     return average_brightness < threshold
 
+# def rgb_sieve(pixel):
+#     if pixel[0] == 186:
+#     # Возвращаем True, если яркость пикселя меньше порога, иначе False
+#         return True
+#     return False
+
+
 

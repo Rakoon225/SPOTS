@@ -16,7 +16,7 @@ def find_spots(image, draw):
             if rgb_sieve(pixel):
                 distance = round( math.sqrt( ( x - centrel_pixel[0] )**2 + ( y - centrel_pixel[1] )**2 ))
                 
-                if distance+70 < radius: 
+                if distance + 150 < radius: 
                     # draw.rectangle((x, y, x+10, y+10), fill='blue')
 
                     ls.append([x,y, x+size, y+size])
